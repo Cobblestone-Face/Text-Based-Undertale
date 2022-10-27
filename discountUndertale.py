@@ -42,7 +42,10 @@ else:
         print("\"You know what you're doing, don't you?\"")
     print("A creature comes by and kicks Flowey offscreen.")
     print("-- BATTLE OVER. --")
-    print("(You already know all the stuff that happens so I'll just skip to the cool part)")
+    print()
+    print("(I'm not sure how to code puzzles in right now but I'll figure it out, until then here's what happens:)")
+    print("The creature was Toriel who is a mother-like character. She takes you into her home and offers for you to live there. Then you try to leave.")
+    print()
     leave = input("(Toriel) \"Are you really sure you want to leave?\" (y/n) ")
     if leave == "n":
         print("ok.")
@@ -60,7 +63,7 @@ else:
                 print("GAME OVER")
                 print("This error exists to end the code, idk how else to do it")
                 print()
-                print(0 / 0) ## This creates an error to end the game. ##
+                sys.exit() ## This creates an error to end the game. ##
         if torielHp <= 0:
             genocide += 1
         else:
