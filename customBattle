@@ -1,0 +1,30 @@
+
+import undertale
+import random
+health = 15
+
+
+"""
+USE THIS TO CREATE YOUR OWN UNDERTALE BOSS FIGHT
+
+Visuals:
+undertale.generateBattle(OPPONENT NAME, PLAYER HP, OPPONENT HP, OPPONENT ICON)
+
+Options:
+variable = undertale.options(OPPONENT HP)
+
+Dodging:
+undertale.opponentAtk(PLAYER HP, ATTACK DIFFICULTY (0-1))
+
+"""
+
+opHp = random.randint(10, 30) # Can be whatever, the random number generator is temporary.
+
+while opHp >= 1: # repeats until the boss is died.
+    undertale.generateBattle("COBBLESTONEFACE", health, opHp, "🙂") # generates the visuals
+    damage = undertale.options(opHp) # generates the options
+    opHp = opHp - damage # calculates damage to opponent
+    random = random.randint(1,5)
+    damageTaken = undertale.opponentAtk(health, random) # does the opponent's attack
+    health -= damageTaken # how much health you lose
+    print("You won!") # ending
