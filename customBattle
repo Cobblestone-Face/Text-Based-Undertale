@@ -28,3 +28,4 @@ while opHp >= 1: # repeats until the boss is died.
     damageTaken = undertale.opponentAtk(health, random) # does the opponent's attack
     health -= damageTaken # how much health you lose
     print("You won!") # ending
+
