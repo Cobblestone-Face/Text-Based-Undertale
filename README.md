@@ -2,10 +2,10 @@
 uhh it's undertale but text based idk
 
 HOW TO RUN WITHOUT A DOWNLOAD:
-Go to platform.techsmart.codes
-Login or sign up and stuff
-paste the code into individual files named exactly what the files are called.
-Run discountUndertale.py
+Go to platform.techsmart.codes, 
+Login or sign up and stuff, 
+paste the code into individual files named exactly what the files are called. 
+Run discountUndertale.py.
 
 
 DISCLAIMER:
