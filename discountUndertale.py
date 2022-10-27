@@ -1,10 +1,9 @@
 """
-Unit 2
 discountUndertale
-Discount Undertale.
 """
 import random
 import undertale
+import sys
 random_number = 0
 health = 10
 floweyOneHp = 10
@@ -48,7 +47,7 @@ else:
     if leave == "n":
         print("ok.")
     if leave == "y":
-        print("\"Then show me you are prepared for the underground.\"")
+        input("\"Then show me you are prepared for the underground.\" (enter to begin) ")
         print("--You hear a theme song play in the background.--")
         while torielHp >= 1:
             undertale.generateBattle("TORIEL", health, torielHp, "🐐")
