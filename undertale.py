@@ -49,7 +49,19 @@ def options(opponentHealth):
 def opponentAtk(hp, difficulty):
     print()
     print("(This dodge system is temporary until i can think of something better :P)") # because im stupid
-    print("The attack is level " + str(difficulty) + " out of 5.")
+
+    if difficulty == 1:
+        comment = "really easy."
+    if difficulty == 2:
+        comment = "easy."
+    if difficulty == 3:
+        comment = "average."
+    if difficulty == 4:
+        comment = "difficult."
+    if difficulty == 5:
+        comment = "really hard!"
+
+    print("The attack is level " + str(difficulty) + " out of 5. This attack is " + comment)
     dodge = random.randint(1,10) # generates a random number the player needs to guess
     luckIGuess = input("Pick a number between 1 and 10. ") # player guesses the number
     damageTaken = abs(dodge - int(luckIGuess)) + difficulty # math :(
