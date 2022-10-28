@@ -24,7 +24,11 @@ while opHp >= 1: # repeats until the boss is died.
     undertale.generateBattle("COBBLESTONEFACE", health, opHp, "🙂") # generates the visuals
     damage = undertale.options(opHp) # generates the options
     opHp = opHp - damage # calculates damage to opponent
-    random = random.randint(1,4)
-    damageTaken = undertale.opponentAtk(health, random) # does the opponent's attack
+    difficulty = random.randint(1,5)
+    damageTaken = undertale.opponentAtk(health, difficulty) # does the opponent's attack
     health -= damageTaken # how much health you lose
 print("You won!") # ending
+print()
+print("End HP: " + str(health))
+print()
+print("Opponent End HP: " + str(opHp))
