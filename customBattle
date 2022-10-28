@@ -1,7 +1,8 @@
 
 import undertale
 import random
-health = 15
+import sys
+
 
 
 """
@@ -18,17 +19,24 @@ undertale.opponentAtk(PLAYER HP, ATTACK DIFFICULTY (0-1))
 
 """
 
-opHp = random.randint(10, 30) # Can be whatever, the random number generator is temporary.
+health = 20 # player's starting health.
+opHp = random.randint(10, 50) # Can be whatever, the random number generator is temporary.
 
-while opHp >= 1: # repeats until the boss is died.
+while opHp >= 1 and health >= 1: # repeats until the boss is died.
     undertale.generateBattle("COBBLESTONEFACE", health, opHp, "🙂") # generates the visuals
     damage = undertale.options(opHp) # generates the options
     opHp = opHp - damage # calculates damage to opponent
     difficulty = random.randint(1,5)
     damageTaken = undertale.opponentAtk(health, difficulty) # does the opponent's attack
     health -= damageTaken # how much health you lose
-print("You won!") # ending
+    if health <= 0: # if you lose
+        print("You died. :(")
+        print()
+    
+if health >= 1: # if you win
+    print("You won! :D")
+
 print()
-print("End HP: " + str(health))
+print("Your End HP: " + str(health))
 print()
 print("Opponent End HP: " + str(opHp))
