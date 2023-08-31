@@ -30,10 +30,15 @@ def options(opponentHealth):
     choice = input("|FIGHT (f)|  |ACT (a)|  |MERCY (m)| ") # options
     if choice == "f": # fight
         attack = random.randint(1,10)
-        num = input("Pick a number between 1 and 10. ")
+        num = int(input("Pick a number between 1 and 10. "))
+        if num > 10:
+            num = 10
+        if num < 1:
+            num = 1
         damage = 10 - abs(attack - int(num))
         print("The number was " + str(attack) + ", you picked " + str(num) + ".")
         input("You did " + str(damage) + " damage. (enter to continue) ")
+    
         return damage
     if choice == "a": # act
         print("Temporarily unavailable :(")
@@ -63,9 +68,13 @@ def opponentAtk(hp, difficulty):
 
     print("The attack is level " + str(difficulty) + " out of 5. This attack is " + comment)
     dodge = random.randint(1,10) # generates a random number the player needs to guess
-    luckIGuess = input("Pick a number between 1 and 10. ") # player guesses the number
-    damageTaken = abs(dodge - int(luckIGuess)) + difficulty # math :(
-    print("The number was " + str(dodge) + ", you chose " + str(luckIGuess) + ", and the damage was increased by " + str(difficulty) + " from the difficulty level.")
+    luckIGuess = int(input("Pick a number between 1 and 10. ")) # player guesses the number
+    if luckIGuess > 10:
+        luckIGuess = 10
+    if luckIGuess < 1:
+        luckIGuess = 1
+    damageTaken = abs(dodge - int(luckIGuess)) + difficulty - 1 # math :(
+    print("The number was " + str(dodge) + ", you chose " + str(luckIGuess) + ", and the damage was increased by " + str(difficulty - 1) + " from the difficulty level.")
     input("You took " + str(damageTaken) + " damage. (enter to continue) ")
     return damageTaken # returns how much damage you took to calculate in the main program
     
